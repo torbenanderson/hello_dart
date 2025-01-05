@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the solveQuadratic function from the quadratic_solver library, for the Dart programming language.">
+  <title>solveQuadratic function - quadratic_solver library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">hello_dart</a></li>
+    <li><a href="../quadratic_solver/quadratic_solver-library.html">quadratic_solver.dart</a></li>
+    <li class="self-crumb">solveQuadratic function</li>
+  </ol>
+  <div class="self-name">solveQuadratic</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar="quadratic_solver&#47;quadratic_solver-library-sidebar.html"
+      data-below-sidebar="">
+      <div>
+<h1><span class="kind-function">solveQuadratic</span> function 
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>
+<span class="name ">solveQuadratic</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="solveQuadratic-param-a"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">a</span>, </span></li>
+<li><span class="parameter" id="solveQuadratic-param-b"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">b</span>, </span></li>
+<li><span class="parameter" id="solveQuadratic-param-c"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">c</span></span></li>
+</ol>)
+
+        
+
+    </section>
+    
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">double solveQuadratic(double a, double b, double c) {
+  &#47;&#47; Check if a is zero (linear equation case)
+  if (a == 0) {
+    if (b == 0) {
+      if (c == 0) {
+        print(&quot;The equation has infinitely many solutions.&quot;);
+        return double.infinity; &#47;&#47; Represent infinite solutions
+      } else {
+        print(&quot;The equation has no solutions!&quot;);
+        return double.nan; &#47;&#47; Represent no solution
+      }
+    } else {
+      &#47;&#47; Linear equation: bx + c = 0
+      final double root = -c &#47; b;
+      print(&quot;The equation is linear with root: $root&quot;);
+      return root;
+    }
+  }
+
+  final double discriminant = pow(b, 2) - 4 * a * c;
+
+  if (discriminant &gt; 0) {
+    &#47;&#47; Two distinct real roots
+    final double root1 = (-b + sqrt(discriminant)) &#47; (2 * a);
+    final double root2 = (-b - sqrt(discriminant)) &#47; (2 * a);
+    print(&quot;Two real roots:&quot;);
+    print(&quot;x₁ = $root1&quot;);
+    print(&quot;x₂ = $root2&quot;);
+  } else if (discriminant == 0) {
+    &#47;&#47; One repeated real root
+    final double root = -b &#47; (2 * a);
+    print(&quot;One repeated real root:&quot;);
+    print(&quot;x = $root&quot;);
+  } else {
+    &#47;&#47; Complex roots
+    final double realPart = -b &#47; (2 * a);
+    final double imaginaryPart = sqrt(-discriminant) &#47; (2 * a);
+    print(&quot;Two complex roots:&quot;);
+    print(&quot;x₁ = $realPart + ${imaginaryPart}i&quot;);
+    print(&quot;x₂ = $realPart - ${imaginaryPart}i&quot;);
+  }
+
+  return discriminant; &#47;&#47; Or return any relevant value you want to expose
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">hello_dart</a></li>
+    <li><a href="../quadratic_solver/quadratic_solver-library.html">quadratic_solver</a></li>
+    <li class="self-crumb">solveQuadratic function</li>
+</ol>
+
+    <h5>quadratic_solver library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-left-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    hello_dart
+      1.0.0
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+
