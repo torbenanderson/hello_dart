@@ -1,3 +1,10 @@
+/// This is a quadratic equation solver in Dart.
+/// It takes three arguments: a, b, and c, which are the coefficients of the quadratic equation.
+/// It then calculates the roots of the equation using the quadratic formula.
+/// If the discriminant is positive, it prints two real roots.
+/// If the discriminant is zero, it prints one repeated real root.
+/// If the discriminant is negative, it prints two complex roots.
+
 import 'dart:math';
 
 void main() {
