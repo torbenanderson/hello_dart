@@ -18,7 +18,7 @@ void main() {
       if (c == 0) {
         print("The equation has infinitely many solutions.");
       } else {
-        print("The equation has no solutions.");
+        print("The equation has no solutions!");
       }
     } else {
       // Linear equation: bx + c = 0
