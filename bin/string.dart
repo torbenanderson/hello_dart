@@ -22,4 +22,9 @@ void main() {
   print('Number of Unicode code points: ${vote2.runes.length}'); // Outputs: 11
   print(
       'Number of Unicode grapheme clusters: ${vote2.characters.length}'); // Outputs: 11
+
+  const number = 10;
+  const multiplier = 5;
+  final summary = '$number * $multiplier = ${number * multiplier}';
+  print(summary);
 }
