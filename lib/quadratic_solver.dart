@@ -1,11 +1,18 @@
-/// This is a quadratic equation solver in Dart.
-/// It takes three arguments: a, b, and c, which are the coefficients of the quadratic equation.
-/// It then calculates the roots of the equation using the quadratic formula.
-/// If the discriminant is positive, it prints two real roots.
-/// If the discriminant is zero, it prints one repeated real root.
-/// If the discriminant is negative, it prints two complex roots.
-
 import 'dart:math';
+
+/// Solves a quadratic equation ax² + bx + c = 0.
+/// Returns the discriminant of the equation.
+/// Prints the roots (real or complex) to the console.
+///
+/// Parameters:
+/// - [a] coefficient of x²
+/// - [b] coefficient of x
+/// - [c] constant term
+///
+/// Returns:
+/// - The discriminant (b² - 4ac)
+/// - double.infinity for infinite solutions
+/// - double.nan for no solutions
 
 double solveQuadratic(double a, double b, double c) {
   // Check if a is zero (linear equation case)
